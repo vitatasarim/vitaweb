@@ -76,19 +76,16 @@ body::before {
 }
 
 
-.content {
-    flex: 1;
+footer {
+  background-color: #ffffff00;
+  color: white;
+  text-align: center;
+  padding: 0px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
-footer {
-    background-color: #ffffff00;
-    color: white;
-    text-align: center;
-    padding: 0px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
 
   .modal {
     display: none;
@@ -188,12 +185,11 @@ footer {
     width: 100%;
     z-index: 1000;
     transition: top 0.3s;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
+    
 }
 
 h1 {
-    font-size: 4em;
+    font-size: 2.5em;
     margin: 0;
     font-family: 'Comfortaa', sans-serif;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
