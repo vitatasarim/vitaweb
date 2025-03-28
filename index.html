@@ -29,4 +29,108 @@
       window.location.href = "https://vitadekor.art/main/home";
     }, 6000); 
   </script>
+    <style>
+        :root {
+  --animation-duration: 4s;
+  --bg-zoom-in-start: 1.2;
+  --bg-zoom-in-end: 1;
+  --bg-zoom-out-start: 1;
+  --bg-zoom-out-end: 2;
+  --font-size: 5em;
+}
+
+body {
+  margin: 0;
+  font-size: var(--font-size);
+  background: url('https://raw.githubusercontent.com/vitatasarim/vitaweb/refs/heads/main/img/orman.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.banner {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://raw.githubusercontent.com/vitatasarim/vitaweb/refs/heads/main/img/agac.png') center/cover no-repeat;
+  animation: bgZoomIn var(--animation-duration) ease-in-out forwards;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('img/after.png') top/cover no-repeat;
+  animation: bgZoomOut var(--animation-duration) ease-in-out forwards;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes bgZoomIn {
+  from {
+    transform: scale(var(--bg-zoom-in-start));
+  }
+  to {
+    transform: scale(var(--bg-zoom-in-end));
+  }
+}
+
+@keyframes bgZoomOut {
+  from {
+    transform: scale(var(--bg-zoom-out-start));
+  }
+  to {
+    transform: scale(var(--bg-zoom-out-end));
+  }
+}
+
+svg path {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 1;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: textAnimation var(--animation-duration) ease-in-out forwards;
+}
+
+@keyframes textAnimation {
+  0% {
+    stroke-dashoffset: 50;
+  }
+  80% {
+    fill: transparent;
+  }
+  100% {
+    fill: #fff;
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size: 3em;
+  }
+  body {
+    font-size: var(--font-size);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size: 2em;
+  }
+  body {
+    font-size: var(--font-size);
+  }
+}
+    </style>
 </html>
