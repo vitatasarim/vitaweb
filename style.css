@@ -10,7 +10,7 @@
 body {
   margin: 0;
   font-size: var(--font-size);
-  background: url('img/orman.jpg') no-repeat center center fixed;
+  background: url('https://raw.githubusercontent.com/vitatasarim/vitaweb/refs/heads/main/img/orman.jpg') no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -27,7 +27,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('img/agac.png') center/cover no-repeat;
+  background: url('https://raw.githubusercontent.com/vitatasarim/vitaweb/refs/heads/main/img/agac.png') center/cover no-repeat;
   animation: bgZoomIn var(--animation-duration) ease-in-out forwards;
   z-index: -1;
   pointer-events: none;
