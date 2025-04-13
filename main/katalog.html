@@ -12,30 +12,33 @@
     
 </head>
 <body>
+  
     <header id="header">
         <h1>Vita Tasarım</h1>
     </header>
     <div class="katalog">
         <div id="particles-container"></div>
-        <div class="kart"><img src="img/IMG (1).jpg" alt=""></div>
-        <div class="kart"><img src="img/IMG (2).jpg" alt=""></div>
-        <div class="kart"><img src="img/IMG (3).jpg" alt=""></div>
-        <div class="kart"><img src="img/IMG (4).jpg" alt=""></div>
-        <div class="kart"><img src="img/IMG (5).jpg" alt=""></div>
-        <div class="kart"><img src="img/IMG (6).jpg" alt=""></div>
-        <div class="kart"><img src="img/IMG (7).jpg" alt=""></div>
-        <div class="kart"><img src="img/IMG (8).jpg" alt=""></div>
-        <div class="kart"><img src="img/IMG (9).jpg" alt=""></div>
-        <div class="kart"><img src="img/IMG (10).jpg" alt=""></div>
-        <div class="kart"><img src="img/IMG (11).jpg" alt=""></div>
-        <div class="kart"><img src="img/IMG (12).jpg" alt=""></div>
-        <div class="kart"><img src="img/IMG (13).jpg" alt=""></div>
-        <div class="kart"><img src="img/IMG (14).jpg" alt=""></div>
-        <div class="kart"><img src="img/IMG (15).jpg" alt=""></div>
-        <div class="kart"><img src="img/IMG (16).jpg" alt=""></div>
-        <div class="kart"><img src="img/IMG (17).jpg" alt=""></div>
-        <div class="kart"><img src="img/IMG (18).jpg" alt=""></div>
+        <div class="kart"><img src="img/IMG (1).jpg" alt="Fotograf"></div>
+        <div class="kart"><img src="img/IMG (2).jpg" alt="Fotograf"></div>
+        <div class="kart"><img src="img/IMG (3).jpg" alt="Fotograf"></div>
+        <div class="kart"><img src="img/IMG (4).jpg" alt="Fotograf"></div>
+        <div class="kart"><img src="img/IMG (5).jpg" alt="Fotograf"></div>
+        <div class="kart"><img src="img/IMG (6).jpg" alt="Fotograf"></div>
+        <div class="kart"><img src="img/IMG (7).jpg" alt="Fotograf"></div>
+        <div class="kart"><img src="img/IMG (8).jpg" alt="Fotograf"></div>
+        <div class="kart"><img src="img/IMG (9).jpg" alt="Fotograf"></div>
+        <div class="kart"><img src="img/IMG (10).jpg" alt="Fotograf"></div>
+        <div class="kart"><img src="img/IMG (11).jpg" alt="Fotograf"></div>
+        <div class="kart"><img src="img/IMG (12).jpg" alt="Fotograf"></div>
+        <div class="kart"><img src="img/IMG (13).jpg" alt="Fotograf"></div>
+        <div class="kart"><img src="img/IMG (14).jpg" alt="Fotograf"></div>
+        <div class="kart"><img src="img/IMG (15).jpg" alt="Fotograf"></div>
+        <div class="kart"><img src="img/IMG (16).jpg" alt="Fotograf"></div>
+        <div class="kart"><img src="img/IMG (17).jpg" alt="Fotograf"></div>
+        <div class="kart"><img src="img/IMG (18).jpg" alt="Fotograf"></div>
     </div>
+    
+    <div class="yazi">Katalog</div>
     <footer>
         © 2025 Vita Dekorasyon Tasarım. Tüm hakları saklıdır.
     </footer>
@@ -48,7 +51,23 @@
   
 
 </body>
-
+<script>
+  let snowContainer = document.createElement('div'); 
+  snowContainer.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1;overflow:hidden;';
+  document.body.appendChild(snowContainer);
+  
+  let i = 100; 
+  while (i--) { 
+      let s = document.createElement('div'); 
+      s.style.cssText = `position:absolute;top:-10px;left:${Math.random()*100}vw;width:10px;height:10px;background:white;border-radius:50%;opacity:${Math.random()};animation:fall ${5 + Math.random() * 5}s linear infinite;`; 
+      snowContainer.appendChild(s); 
+  } 
+  
+  document.head.insertAdjacentHTML('beforeend', '<style>@keyframes fall { to { transform: translateY(100vh); } }</style>');
+  </script>
+  
+  
+  
 <script>
 document.querySelectorAll(".kart").forEach((kart) => {
     const img = kart.querySelector("img");
@@ -89,21 +108,7 @@ document.getElementById("modal").addEventListener("click", (e) => {
   }
 });
 
-const header = document.getElementById("header");
 
-let lastScrollTop = 0; 
-
-window.addEventListener("scroll", function() {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (currentScroll > lastScrollTop) {
-        header.style.top = "-80px"; 
-    } else {
-        header.style.top = "20px"; 
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-});
 
 </script>
 
@@ -112,7 +117,8 @@ window.addEventListener("scroll", function() {
 <style>body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, rgba(5, 0, 15, 0.9),  rgba(61, 0, 48, 0.61));
+    background: linear-gradient(to bottom, rgba(245, 236, 207, 0.548),  rgba(231, 214, 189, 0.274));
+    background-color: black;
     min-height: 0vh;
     display: flex;
     flex-direction: column;
@@ -121,24 +127,10 @@ window.addEventListener("scroll", function() {
     background-attachment: fixed;
     overflow: auto;
 }
-body::-webkit-scrollbar {
-    width: 12px; 
-}
 
-body::-webkit-scrollbar-track {
-    background: rgb(11, 0, 20); 
-    border-radius: 10px; 
-}
 
-body::-webkit-scrollbar-thumb {
-    background: #140024; 
-    border-radius: 10px; 
-    transition: background-color 0.3s ease; 
-}
 
-body::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-}
+
 body::before {
     content: "";
     position: absolute;
@@ -152,15 +144,25 @@ body::before {
 }
 
 .katalog {
-    margin-top: 5rem;
-    padding-bottom: 5rem;
+    margin-top: 4rem;
+    padding-top: 10rem;
+    padding-bottom: 2rem;
+    align-items: flex-start;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
     flex-wrap: wrap;
     width: 90%;
     max-width: 1200px;
-}
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    border-radius: 15px;
+    backdrop-filter: blur(10px); /* Arka planı bulanıklaştır */
+    -webkit-backdrop-filter: blur(6px); /* Safari desteği */
+
+  }
+
+  
+
 
 .kart {
     width: 320px;
@@ -191,7 +193,7 @@ footer {
   background-color: #ffffff00;
   color: white;
   text-align: center;
-  padding: 0px;
+  padding: 20px;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -287,24 +289,66 @@ footer {
 
   header {
     background-color: rgba(255, 255, 255, 0);
-    color: white;
+    color: rgb(233, 193, 141);
     text-align: center;
     padding: 20px 0;
-    position: fixed;
+    position: absolute;
     top: 20px;
     left: 0;
     width: 100%;
     z-index: 1000;
     transition: top 0.3s;
-    
 }
 
+
 h1 {
-    font-size: 2.5em;
+    font-size: 3.5em;
     margin: 0;
     font-family: 'Comfortaa', sans-serif;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
 }
+.yazi {
+    position: absolute;  
+    top: 18%; 
+    left: 23.15%;
+    font-size: 3rem;
+    background-color: transparent; 
+    padding: 12px 20px; 
+    text-align: left;
+    color: rgb(238, 205, 160);
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 700;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.45); 
+    letter-spacing: 1.5px;
+    border-radius: 8px; 
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.yazi:hover {
+    text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5);
+    transform: scale(1.02); 
+
+}
+.yazi::after {
+    content: "";
+    display: block;
+    width: 160px;
+    height: 3px;
+    background: rgb(238, 205, 160);
+    margin-top: 8px;
+    border-radius: 5px;
+    transition: width 0.3s ease-in-out;
+}
+
+
+
+
+
+
+
+
 
 body {
     margin-top: 80px;
@@ -312,8 +356,15 @@ body {
 
 footer {
     position: relative;
-    background-color: #333;
+    background-color: #33333300;
     color: white;
     text-align: center;
 }
+
+
+
+
+
+
+
 </style>

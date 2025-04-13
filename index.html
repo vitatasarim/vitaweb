@@ -35,7 +35,7 @@
   --bg-zoom-in-start: 1.2;
   --bg-zoom-in-end: 1;
   --bg-zoom-out-start: 1;
-  --bg-zoom-out-end: 2;
+  --bg-zoom-out-end: 3;
   --font-size: 5em;
 }
 
@@ -77,16 +77,19 @@ body {
 
 @keyframes bgZoomIn {
   from {
-    transform: scale(var(--bg-zoom-in-start));
+    transform: scale(var(--bg-zoom-in-end));
+
   }
   to {
-    transform: scale(var(--bg-zoom-in-end));
+    transform: scale(var(--bg-zoom-in-start));
+
   }
 }
 
 @keyframes bgZoomOut {
   from {
     transform: scale(var(--bg-zoom-out-start));
+
   }
   to {
     transform: scale(var(--bg-zoom-out-end));
